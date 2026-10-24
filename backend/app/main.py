@@ -1,6 +1,7 @@
 
 import asyncio
 import logging
+import time
 from contextlib import asynccontextmanager
 
 from fastapi import FastAPI, Request
@@ -19,26 +20,68 @@ logging.basicConfig(
 logger = logging.getLogger("aeropolicy")
 
 
-async def initialize_policy_index():
-    """Initialize the RAG index without blocking server startup."""
+async def initialize_policy_index(app: FastAPI):
+    """Initialize the RAG engine in a background thread."""
     engine = RAGEngine()
+    started_at = time.perf_counter()
+
+    app.state.policy_initialization_finished = False
+    app.state.policy_initialization_error = None
+
+    logger.info(
+        "BACKGROUND_INIT: START engine_id=%s model=%s",
+        id(engine),
+        settings.EMBEDDING_MODEL_NAME,
+    )
 
     try:
-        logger.info("BACKGROUND_INIT: Starting policy index initialization.")
+        success = await asyncio.to_thread(
+            engine.initialize_on_startup
+        )
 
-        success = await asyncio.to_thread(engine.initialize_on_startup)
-
-        if success:
-            logger.info("BACKGROUND_INIT: Policy index is ready.")
+        if success and engine.is_ready:
+            logger.info(
+                "BACKGROUND_INIT: SUCCESS engine_id=%s "
+                "ready=%s chunks=%d elapsed=%.2fs",
+                id(engine),
+                engine.is_ready,
+                len(engine.vectorstore.chunks),
+                time.perf_counter() - started_at,
+            )
         else:
+            message = (
+                "Policy index initialization returned without "
+                "a ready engine."
+            )
+            app.state.policy_initialization_error = message
+
             logger.error(
-                "BACKGROUND_INIT: Policy index is not ready. "
-                "Check the policy file and vector store."
+                "BACKGROUND_INIT: NOT_READY engine_id=%s "
+                "ready=%s chunks=%d elapsed=%.2fs",
+                id(engine),
+                engine.is_ready,
+                len(engine.vectorstore.chunks),
+                time.perf_counter() - started_at,
             )
 
-    except Exception:
+    except Exception as exc:
+        app.state.policy_initialization_error = str(exc)
+
         logger.exception(
-            "BACKGROUND_INIT: Policy index initialization failed."
+            "BACKGROUND_INIT: FAILED engine_id=%s elapsed=%.2fs",
+            id(engine),
+            time.perf_counter() - started_at,
+        )
+
+    finally:
+        app.state.policy_initialization_finished = True
+
+        logger.info(
+            "BACKGROUND_INIT: FINISHED engine_id=%s ready=%s "
+            "elapsed=%.2fs",
+            id(engine),
+            engine.is_ready,
+            time.perf_counter() - started_at,
         )
 
 
@@ -47,16 +90,42 @@ async def lifespan(app: FastAPI):
     logger.info("Starting AeroPolicy AI backend service.")
 
     engine = RAGEngine()
-    initialization_task = asyncio.create_task(
-        asyncio.to_thread(engine.initialize_on_startup)
+    app.state.rag_engine = engine
+    app.state.policy_initialization_finished = False
+    app.state.policy_initialization_error = None
+
+    logger.info(
+        "APP_STARTUP: RAGEngine instance_id=%s ready=%s",
+        id(engine),
+        engine.is_ready,
     )
 
-    yield
+    initialization_task = asyncio.create_task(
+        initialize_policy_index(app),
+        name="policy-index-initialization",
+    )
+    app.state.policy_initialization_task = initialization_task
 
-    if not initialization_task.done():
-        initialization_task.cancel()
+    try:
+        yield
+    finally:
+        logger.info("Shutting down AeroPolicy AI backend service.")
 
-    logger.info("Shutting down AeroPolicy AI backend service.")
+        if not initialization_task.done():
+            logger.warning(
+                "APP_SHUTDOWN: Policy initialization is still running."
+            )
+
+            # Do not cancel asyncio.to_thread work and assume the
+            # underlying thread has stopped.
+            try:
+                await initialization_task
+            except Exception:
+                logger.exception(
+                    "APP_SHUTDOWN: Initialization task failed."
+                )
+
+        logger.info("APP_SHUTDOWN: Complete.")
 
 
 app = FastAPI(
@@ -92,7 +161,10 @@ app.add_middleware(
 
 
 @app.exception_handler(Exception)
-async def generic_exception_handler(request: Request, exc: Exception):
+async def generic_exception_handler(
+    request: Request,
+    exc: Exception,
+):
     logger.error(
         "Unhandled exception during %s %s",
         request.method,
@@ -118,4 +190,24 @@ async def root():
         "brand": "AeroVista Airlines",
         "docs": "/docs",
         "health": "/api/health",
+    }
+
+
+@app.get("/api/diagnostics/initialization")
+async def initialization_diagnostics():
+    """Report runtime initialization state without exposing secrets."""
+    engine = app.state.rag_engine
+
+    return {
+        "engine_instance_id": id(engine),
+        "is_ready": engine.is_ready,
+        "is_indexing": engine.is_indexing,
+        "chunks_loaded_in_memory": len(engine.vectorstore.chunks),
+        "initialization_finished": (
+            app.state.policy_initialization_finished
+        ),
+        "initialization_error": (
+            app.state.policy_initialization_error
+        ),
+        "embedding_model": settings.EMBEDDING_MODEL_NAME,
     }
