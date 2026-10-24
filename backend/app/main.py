@@ -1,4 +1,5 @@
 
+import asyncio
 import logging
 from contextlib import asynccontextmanager
 
@@ -12,31 +13,48 @@ from app.rag.engine import RAGEngine
 
 logging.basicConfig(
     level=logging.INFO,
-    format="%(asctime)s [%(levelname)s] %(name)s: %(message)s"
+    format="%(asctime)s [%(levelname)s] %(name)s: %(message)s",
 )
+
 logger = logging.getLogger("aeropolicy")
+
+
+async def initialize_policy_index():
+    """Initialize the RAG index without blocking server startup."""
+    engine = RAGEngine()
+
+    try:
+        logger.info("BACKGROUND_INIT: Starting policy index initialization.")
+
+        success = await asyncio.to_thread(engine.initialize_on_startup)
+
+        if success:
+            logger.info("BACKGROUND_INIT: Policy index is ready.")
+        else:
+            logger.error(
+                "BACKGROUND_INIT: Policy index is not ready. "
+                "Check the policy file and vector store."
+            )
+
+    except Exception:
+        logger.exception(
+            "BACKGROUND_INIT: Policy index initialization failed."
+        )
 
 
 @asynccontextmanager
 async def lifespan(app: FastAPI):
-    logger.info("Starting AeroPolicy AI backend service...")
+    logger.info("Starting AeroPolicy AI backend service.")
 
     engine = RAGEngine()
-
-    try:
-        success = engine.initialize_on_startup()
-
-        if success:
-            logger.info("AeroVista Airlines policy index successfully initialized.")
-        else:
-            logger.warning(
-                "Policy index initialization reported non-ready state. "
-                "Check policy files."
-            )
-    except Exception:
-        logger.exception("Startup indexing error")
+    initialization_task = asyncio.create_task(
+        asyncio.to_thread(engine.initialize_on_startup)
+    )
 
     yield
+
+    if not initialization_task.done():
+        initialization_task.cancel()
 
     logger.info("Shutting down AeroPolicy AI backend service.")
 
@@ -51,7 +69,6 @@ app = FastAPI(
     lifespan=lifespan,
 )
 
-# CORS: explicitly allow the deployed Vercel frontend.
 origins = [
     "https://aero-policy-ai.vercel.app",
     "http://localhost:5173",
@@ -60,8 +77,8 @@ origins = [
     "http://127.0.0.1:3000",
 ]
 
-# Include the configured frontend origin if it is different.
 configured_origin = settings.FRONTEND_ORIGIN.rstrip("/")
+
 if configured_origin and configured_origin not in origins:
     origins.append(configured_origin)
 
@@ -86,10 +103,7 @@ async def generic_exception_handler(request: Request, exc: Exception):
     return JSONResponse(
         status_code=500,
         content={
-            "detail": (
-                "An internal server error occurred. "
-                "Please contact system administrator."
-            )
+            "detail": "An internal server error occurred."
         },
     )
 
