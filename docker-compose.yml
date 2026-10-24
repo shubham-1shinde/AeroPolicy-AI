@@ -1,0 +1,29 @@
+version: '3.8'
+
+services:
+  backend:
+    build:
+      context: ./backend
+      dockerfile: Dockerfile
+    ports:
+      - "8000:8000"
+    environment:
+      - GEMINI_API_KEY=${GEMINI_API_KEY}
+      - GEMINI_MODEL=gemini-2.5-flash
+      - FRONTEND_ORIGIN=http://localhost:5173
+      - ADMIN_API_TOKEN=change-this-token
+      - POLICY_PATH=public/airline_policy.md
+      - VECTORSTORE_PATH=data/vectorstore
+      - METADATA_PATH=data/metadata
+    volumes:
+      - ./backend/data:/app/data
+      - ./backend/public:/app/public
+
+  frontend:
+    build:
+      context: ./frontend
+      dockerfile: Dockerfile
+    ports:
+      - "5173:5173"
+    depends_on:
+      - backend

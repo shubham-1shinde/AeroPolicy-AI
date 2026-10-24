@@ -1,0 +1,566 @@
+[
+  {
+    "chunk_id": "chunk_1",
+    "content": "**Document Reference:** AV-POL-2026-REV4  \n**Policy Version:** 2026.2  \n**Effective Date:** January 15, 2026  \n**Governing Entity:** AeroVista Airlines Customer Relations & Tariffs Board  \n**Classification:** Public Passenger Advisory & General Conditions of Carriage  \n\n> **DISCLAIMER:**  \n> AeroVista Airlines is a fictional airline created solely for testing, demonstration, and evaluation of AI retrieval and safety systems. The policies, fare rules, fees, and procedures outlined herein are entirely fictional and do not represent the terms, conditions, or liability of any actual operating air carrier.\n\n---",
+    "metadata": {
+      "source": "airline_policy.md",
+      "section": "AeroVista Airlines \u2014 Passenger Service & Fare Rules Policy Document",
+      "page": null,
+      "chunk_id": "chunk_1",
+      "chunk_index": 0,
+      "doc_hash": "c311aa1b86c454debda2d7a9024bada3e3295d7ba22c5491982effdd9622263f"
+    }
+  },
+  {
+    "chunk_id": "chunk_2",
+    "content": "[1. Scope, Purpose & Policy Definitions]\n1.1. This document establishes the terms and conditions governing passenger ticket sales, booking modifications, cancellations, refunds, baggage handling, and special assistance for all flights operated by AeroVista Airlines (ICAO: AVA, IATA: VA).\n1.2. **Definitions:**\n- **Carrier:** AeroVista Airlines.\n- **Cooling-Off Period:** The mandatory 24-hour post-purchase cancellation window.\n- **Fare Difference:** The difference in currency value between the base fare and applicable taxes of the original ticket and the newly selected itinerary at the time of change.",
+    "metadata": {
+      "source": "airline_policy.md",
+      "section": "1. Scope, Purpose & Policy Definitions",
+      "page": null,
+      "chunk_id": "chunk_2",
+      "chunk_index": 1,
+      "doc_hash": "c311aa1b86c454debda2d7a9024bada3e3295d7ba22c5491982effdd9622263f"
+    }
+  },
+  {
+    "chunk_id": "chunk_3",
+    "content": "[1. Scope, Purpose & Policy Definitions]\n- **Force Majeure:** Extraordinary events beyond carrier control, including extreme meteorological conditions, airspace closures, war, and civil unrest.  \n- **Grounded Decision:** An operational determination strictly authorized by the published clauses of this policy manual.\n- **No-Show:** Failure by a passenger to check in or board a flight by the designated deadline without prior cancellation.\n- **Pre-Purchase Authorization:** Approvals required prior to ticket payment and issuance to qualify for specific fare concessions.",
+    "metadata": {
+      "source": "airline_policy.md",
+      "section": "1. Scope, Purpose & Policy Definitions",
+      "page": null,
+      "chunk_id": "chunk_3",
+      "chunk_index": 2,
+      "doc_hash": "c311aa1b86c454debda2d7a9024bada3e3295d7ba22c5491982effdd9622263f"
+    }
+  },
+  {
+    "chunk_id": "chunk_4",
+    "content": "[1. Scope, Purpose & Policy Definitions]\n---",
+    "metadata": {
+      "source": "airline_policy.md",
+      "section": "1. Scope, Purpose & Policy Definitions",
+      "page": null,
+      "chunk_id": "chunk_4",
+      "chunk_index": 3,
+      "doc_hash": "c311aa1b86c454debda2d7a9024bada3e3295d7ba22c5491982effdd9622263f"
+    }
+  },
+  {
+    "chunk_id": "chunk_5",
+    "content": "AeroVista Airlines offers four primary cabin fare categories. Refundability is determined strictly by the fare family purchased at the time of initial transaction:",
+    "metadata": {
+      "source": "airline_policy.md",
+      "section": "2. Ticket Cancellation, Refund Eligibility & Fare Classes",
+      "page": null,
+      "chunk_id": "chunk_5",
+      "chunk_index": 4,
+      "doc_hash": "c311aa1b86c454debda2d7a9024bada3e3295d7ba22c5491982effdd9622263f"
+    }
+  },
+  {
+    "chunk_id": "chunk_6",
+    "content": "- **Refund Eligibility:** Strictly non-refundable under all standard circumstances.\n- **Cancellation for Credit:** Not permitted. If a passenger cancels an Economy Basic ticket, the total purchase price (including base fare and carrier surcharges) is forfeited.\n- **Refundable Taxes:** Unused government-imposed departure and security taxes may be refunded upon written request; a processing fee of $45 USD per passenger applies.\n- **Exceptions:** Cancelled only under Section 3.1 (24-Hour Purchase Policy) or Section 8 (Carrier Flight Cancellations).",
+    "metadata": {
+      "source": "airline_policy.md",
+      "section": "2.1. Economy Basic (Fare Code: ECO-BSC)",
+      "page": null,
+      "chunk_id": "chunk_6",
+      "chunk_index": 5,
+      "doc_hash": "c311aa1b86c454debda2d7a9024bada3e3295d7ba22c5491982effdd9622263f"
+    }
+  },
+  {
+    "chunk_id": "chunk_7",
+    "content": "- **Refund Eligibility:** Non-refundable to the original method of payment.\n- **Cancellation for Future Travel Credit:** Permitted up to 2 hours prior to scheduled flight departure. A cancellation fee of $125 USD per one-way itinerary will be deducted, and the remaining balance will be issued as an AeroVista Future Travel Voucher valid for 12 months.\n- **Refundable Taxes:** Government taxes are refundable upon request if the travel credit is declined.",
+    "metadata": {
+      "source": "airline_policy.md",
+      "section": "2.2. Economy Standard (Fare Code: ECO-STD)",
+      "page": null,
+      "chunk_id": "chunk_7",
+      "chunk_index": 6,
+      "doc_hash": "c311aa1b86c454debda2d7a9024bada3e3295d7ba22c5491982effdd9622263f"
+    }
+  },
+  {
+    "chunk_id": "chunk_8",
+    "content": "- **Refund Eligibility:** Fully refundable to the original payment method without cancellation penalty when cancelled at least 2 hours prior to scheduled departure.\n- **Cancellations within 2 hours of departure:** Subject to a late cancellation fee of $75 USD; remaining balance refunded to original payment method.",
+    "metadata": {
+      "source": "airline_policy.md",
+      "section": "2.3. Economy Flex (Fare Code: ECO-FLX)",
+      "page": null,
+      "chunk_id": "chunk_8",
+      "chunk_index": 7,
+      "doc_hash": "c311aa1b86c454debda2d7a9024bada3e3295d7ba22c5491982effdd9622263f"
+    }
+  },
+  {
+    "chunk_id": "chunk_9",
+    "content": "- **Refund Eligibility:** Fully refundable to the original payment method at any time prior to departure with zero cancellation penalty.\n- **Refund Processing:** Direct credit back to original credit card, bank account, or corporate travel management account.\n\n---",
+    "metadata": {
+      "source": "airline_policy.md",
+      "section": "2.4. Business First (Fare Code: BUS-FST)",
+      "page": null,
+      "chunk_id": "chunk_9",
+      "chunk_index": 8,
+      "doc_hash": "c311aa1b86c454debda2d7a9024bada3e3295d7ba22c5491982effdd9622263f"
+    }
+  },
+  {
+    "chunk_id": "chunk_10",
+    "content": "Pursuant to federal aviation consumer protection standards, any ticket purchased directly through AeroVista Airlines digital channels (website or mobile app) or telephone reservations may be cancelled within twenty-four (24) hours of initial purchase for a full 100% refund without any penalty, provided that:\n- The reservation was made at least seven (7) calendar days (168 hours) prior to the scheduled flight departure date.\n- The ticket was not already partially flown or redeemed.",
+    "metadata": {
+      "source": "airline_policy.md",
+      "section": "3.1. 24-Hour Cooling-Off Rule",
+      "page": null,
+      "chunk_id": "chunk_10",
+      "chunk_index": 9,
+      "doc_hash": "c311aa1b86c454debda2d7a9024bada3e3295d7ba22c5491982effdd9622263f"
+    }
+  },
+  {
+    "chunk_id": "chunk_11",
+    "content": "- For refundable fare classes (Economy Flex and Business First), refund applications must be submitted within ninety (90) calendar days from the scheduled date of departure. Unclaimed tickets older than 90 days are converted into expired inventory and forfeit all cash refund eligibility.\n- For non-refundable fare classes (Economy Basic and Economy Standard), requests for refund of eligible government taxes must be submitted within twelve (12) months of ticket issuance.",
+    "metadata": {
+      "source": "airline_policy.md",
+      "section": "3.2. Post-Purchase Refund Submission Deadlines",
+      "page": null,
+      "chunk_id": "chunk_11",
+      "chunk_index": 10,
+      "doc_hash": "c311aa1b86c454debda2d7a9024bada3e3295d7ba22c5491982effdd9622263f"
+    }
+  },
+  {
+    "chunk_id": "chunk_12",
+    "content": "All approved refunds must be returned to the original form of payment used during booking (credit card, debit card, or electronic bank transfer). Under no circumstances will cash or alternative credit card transfers be issued.\n\n---",
+    "metadata": {
+      "source": "airline_policy.md",
+      "section": "3.3. Payment Method for Refunds",
+      "page": null,
+      "chunk_id": "chunk_12",
+      "chunk_index": 11,
+      "doc_hash": "c311aa1b86c454debda2d7a9024bada3e3295d7ba22c5491982effdd9622263f"
+    }
+  },
+  {
+    "chunk_id": "chunk_13",
+    "content": "> **CRITICAL LEGAL NOTICE & ELIGIBILITY BOUNDARIES:**  \n> This section governs bereavement arrangements. Personnel and automated assistants must adhere strictly to these published boundaries.",
+    "metadata": {
+      "source": "airline_policy.md",
+      "section": "4. Bereavement and Compassionate Travel Policy",
+      "page": null,
+      "chunk_id": "chunk_13",
+      "chunk_index": 12,
+      "doc_hash": "c311aa1b86c454debda2d7a9024bada3e3295d7ba22c5491982effdd9622263f"
+    }
+  },
+  {
+    "chunk_id": "chunk_14",
+    "content": "AeroVista Airlines provides reduced-rate compassionate fares (\"Bereavement Courtesy Rates\") to accommodate immediate family members traveling due to the imminent death or funeral of an immediate relative.",
+    "metadata": {
+      "source": "airline_policy.md",
+      "section": "4.1. Bereavement Concession Scope",
+      "page": null,
+      "chunk_id": "chunk_14",
+      "chunk_index": 13,
+      "doc_hash": "c311aa1b86c454debda2d7a9024bada3e3295d7ba22c5491982effdd9622263f"
+    }
+  },
+  {
+    "chunk_id": "chunk_15",
+    "content": "- Bereavement courtesy fares must be applied for and booked **PRIOR TO TICKET PURCHASE** through the dedicated AeroVista Compassionate Desk (telephone reservations only).\n- The compassionate fare code must be entered by an authorized ticketing agent before payment processing.\n- Required Documentation: Official death certificate, statement from attending physician on hospital letterhead, or funeral home director's certificate must be submitted within seven (7) days of booking.",
+    "metadata": {
+      "source": "airline_policy.md",
+      "section": "4.2. Pre-Purchase Requirement (Strict Mandate)",
+      "page": null,
+      "chunk_id": "chunk_15",
+      "chunk_index": 14,
+      "doc_hash": "c311aa1b86c454debda2d7a9024bada3e3295d7ba22c5491982effdd9622263f"
+    }
+  },
+  {
+    "chunk_id": "chunk_16",
+    "content": "[4.3. Post-Purchase Ticket Ineligibility (No Retroactive Bereavement Refunds)]\n- **Tickets Purchased Prior to Bereavement:** If a passenger has already purchased a standard ticket (such as Economy Basic, Economy Standard, or promotional promotional fares) and experiences a death in the family after purchase, **AeroVista Airlines does NOT issue retroactive bereavement refunds or price adjustments.**\n- Such tickets remain strictly bound by the original cancellation and refund terms of the purchased fare class (see Section 2).\n- The airline does not convert a non-refundable ticket into a refundable ticket based on post-purchase bereavement.",
+    "metadata": {
+      "source": "airline_policy.md",
+      "section": "4.3. Post-Purchase Ticket Ineligibility (No Retroactive Bereavement Refunds)",
+      "page": null,
+      "chunk_id": "chunk_16",
+      "chunk_index": 15,
+      "doc_hash": "c311aa1b86c454debda2d7a9024bada3e3295d7ba22c5491982effdd9622263f"
+    }
+  },
+  {
+    "chunk_id": "chunk_17",
+    "content": "[4.3. Post-Purchase Ticket Ineligibility (No Retroactive Bereavement Refunds)]\n- Passengers may cancel in accordance with their fare class (e.g., for Future Travel Credit if Economy Standard, or full refund if Economy Flex).\n- **Automated Assistant & Staff Directive:** Agents must never promise, guarantee, or imply eligibility for a cash refund after ticket purchase on the grounds of bereavement. Any passenger seeking compassionate exceptions must be referred to the written escalation department (Section 14) without financial commitments.",
+    "metadata": {
+      "source": "airline_policy.md",
+      "section": "4.3. Post-Purchase Ticket Ineligibility (No Retroactive Bereavement Refunds)",
+      "page": null,
+      "chunk_id": "chunk_17",
+      "chunk_index": 16,
+      "doc_hash": "c311aa1b86c454debda2d7a9024bada3e3295d7ba22c5491982effdd9622263f"
+    }
+  },
+  {
+    "chunk_id": "chunk_18",
+    "content": "[4.3. Post-Purchase Ticket Ineligibility (No Retroactive Bereavement Refunds)]\n---",
+    "metadata": {
+      "source": "airline_policy.md",
+      "section": "4.3. Post-Purchase Ticket Ineligibility (No Retroactive Bereavement Refunds)",
+      "page": null,
+      "chunk_id": "chunk_18",
+      "chunk_index": 17,
+      "doc_hash": "c311aa1b86c454debda2d7a9024bada3e3295d7ba22c5491982effdd9622263f"
+    }
+  },
+  {
+    "chunk_id": "chunk_19",
+    "content": "[5. Flight Changes, Rebooking Rules & Change Fees]\n5.1. **Economy Basic:** Flight changes, itinerary modifications, date changes, and route alterations are strictly prohibited.\n5.2. **Economy Standard:** Flight changes are permitted up to 2 hours before departure. A change fee of $95 USD applies per direction, plus any applicable Fare Difference. If the new fare is lower, no credit or cash refund is provided for the difference.\n5.3. **Economy Flex:** Unlimited flight changes permitted with $0 change fee. Passenger is responsible only for any applicable Fare Difference.",
+    "metadata": {
+      "source": "airline_policy.md",
+      "section": "5. Flight Changes, Rebooking Rules & Change Fees",
+      "page": null,
+      "chunk_id": "chunk_19",
+      "chunk_index": 18,
+      "doc_hash": "c311aa1b86c454debda2d7a9024bada3e3295d7ba22c5491982effdd9622263f"
+    }
+  },
+  {
+    "chunk_id": "chunk_20",
+    "content": "[5. Flight Changes, Rebooking Rules & Change Fees]\n5.4. **Business First:** Unlimited flight changes permitted with $0 change fee and priority rebooking. Passenger pays only Fare Difference if moving to a higher fare bucket.  \n5.5. **Same-Day Confirmed Changes:** Available for Economy Flex and Business First passengers on the day of travel for a flat $50 USD fee, subject to seat availability on the requested earlier or later flight on the exact same route.",
+    "metadata": {
+      "source": "airline_policy.md",
+      "section": "5. Flight Changes, Rebooking Rules & Change Fees",
+      "page": null,
+      "chunk_id": "chunk_20",
+      "chunk_index": 19,
+      "doc_hash": "c311aa1b86c454debda2d7a9024bada3e3295d7ba22c5491982effdd9622263f"
+    }
+  },
+  {
+    "chunk_id": "chunk_21",
+    "content": "[5. Flight Changes, Rebooking Rules & Change Fees]\n---",
+    "metadata": {
+      "source": "airline_policy.md",
+      "section": "5. Flight Changes, Rebooking Rules & Change Fees",
+      "page": null,
+      "chunk_id": "chunk_21",
+      "chunk_index": 20,
+      "doc_hash": "c311aa1b86c454debda2d7a9024bada3e3295d7ba22c5491982effdd9622263f"
+    }
+  },
+  {
+    "chunk_id": "chunk_22",
+    "content": "[6. Missed Flights, No-Show Policy and Same-Day Standby]\n6.1. **No-Show Rule:** If a passenger fails to board or fails to cancel their booking at least two (2) hours prior to the scheduled departure time, the reservation will be deemed a \"No-Show.\"\n6.2. **Consequences of No-Show:**\n- For Economy Basic and Economy Standard tickets: The entire ticket value is forfeited, and all subsequent connecting or return flights on the itinerary are automatically cancelled without compensation or refund.\n- For Economy Flex and Business First tickets: The ticket retains its remaining monetary value as a travel credit valid for 6 months, minus a $150 USD No-Show Administrative Penalty.",
+    "metadata": {
+      "source": "airline_policy.md",
+      "section": "6. Missed Flights, No-Show Policy and Same-Day Standby",
+      "page": null,
+      "chunk_id": "chunk_22",
+      "chunk_index": 21,
+      "doc_hash": "c311aa1b86c454debda2d7a9024bada3e3295d7ba22c5491982effdd9622263f"
+    }
+  },
+  {
+    "chunk_id": "chunk_23",
+    "content": "[6. Missed Flights, No-Show Policy and Same-Day Standby]\n6.3. **Same-Day Standby:** Passengers holding Economy Flex or Business First tickets may request same-day standby for earlier flights on the same calendar day free of charge at the airport check-in counter.",
+    "metadata": {
+      "source": "airline_policy.md",
+      "section": "6. Missed Flights, No-Show Policy and Same-Day Standby",
+      "page": null,
+      "chunk_id": "chunk_23",
+      "chunk_index": 22,
+      "doc_hash": "c311aa1b86c454debda2d7a9024bada3e3295d7ba22c5491982effdd9622263f"
+    }
+  },
+  {
+    "chunk_id": "chunk_24",
+    "content": "[6. Missed Flights, No-Show Policy and Same-Day Standby]\n---",
+    "metadata": {
+      "source": "airline_policy.md",
+      "section": "6. Missed Flights, No-Show Policy and Same-Day Standby",
+      "page": null,
+      "chunk_id": "chunk_24",
+      "chunk_index": 23,
+      "doc_hash": "c311aa1b86c454debda2d7a9024bada3e3295d7ba22c5491982effdd9622263f"
+    }
+  },
+  {
+    "chunk_id": "chunk_25",
+    "content": "- **Personal Item:** One (1) small personal item (purse, small backpack, or laptop bag) not exceeding 40 x 30 x 15 cm (16 x 12 x 6 inches), must fit under the seat in front. Included in all fare classes.\n- **Standard Carry-On Bag:** One (1) rollaboard bag not exceeding 55 x 40 x 23 cm (22 x 16 x 9 inches) including handles and wheels, maximum weight 10 kg (22 lbs).\n  - Economy Basic: Not included. Must be purchased in advance ($35 online, $60 at gate).\n  - Economy Standard, Economy Flex, Business First: Included at no charge.",
+    "metadata": {
+      "source": "airline_policy.md",
+      "section": "7.1. Cabin / Carry-On Baggage",
+      "page": null,
+      "chunk_id": "chunk_25",
+      "chunk_index": 24,
+      "doc_hash": "c311aa1b86c454debda2d7a9024bada3e3295d7ba22c5491982effdd9622263f"
+    }
+  },
+  {
+    "chunk_id": "chunk_26",
+    "content": "- **Economy Basic:** 0 checked bags included. 1st checked bag: $40 USD; 2nd checked bag: $55 USD.\n- **Economy Standard:** 1 checked bag included (max 23 kg / 50 lbs, max 158 cm / 62 linear inches). 2nd checked bag: $50 USD.\n- **Economy Flex:** 2 checked bags included (max 23 kg / 50 lbs each).\n- **Business First:** 2 checked bags included (max 32 kg / 70 lbs each) with priority baggage handling tags.",
+    "metadata": {
+      "source": "airline_policy.md",
+      "section": "7.2. Checked Baggage Allowances",
+      "page": null,
+      "chunk_id": "chunk_26",
+      "chunk_index": 25,
+      "doc_hash": "c311aa1b86c454debda2d7a9024bada3e3295d7ba22c5491982effdd9622263f"
+    }
+  },
+  {
+    "chunk_id": "chunk_27",
+    "content": "- Baggage between 23.1 kg and 32 kg (51\u201370 lbs): $100 USD surcharge per bag.\n- Baggage exceeding 32 kg (70 lbs): Prohibited as passenger luggage; must ship via AeroVista Cargo.\n- Oversized dimensions between 159 cm and 203 cm (63\u201380 linear inches): $150 USD surcharge per bag.\n\n---",
+    "metadata": {
+      "source": "airline_policy.md",
+      "section": "7.3. Overweight & Oversized Baggage Fees",
+      "page": null,
+      "chunk_id": "chunk_27",
+      "chunk_index": 26,
+      "doc_hash": "c311aa1b86c454debda2d7a9024bada3e3295d7ba22c5491982effdd9622263f"
+    }
+  },
+  {
+    "chunk_id": "chunk_28",
+    "content": "[8.1. Carrier-Initiated Cancellations (Controllable Reasons)]\nIf AeroVista Airlines cancels a flight due to operational reasons, mechanical issues, crew scheduling, or commercial decisions:\n- The passenger is entitled to rebooking on the next available AeroVista flight at no extra charge.\n- If rebooking is unsuitable or the delay exceeds four (4) hours, the passenger may decline travel and request a **100% full refund to the original form of payment**, regardless of whether the ticket was Economy Basic or non-refundable.\n- Meal vouchers are provided for delays exceeding 3 hours.",
+    "metadata": {
+      "source": "airline_policy.md",
+      "section": "8.1. Carrier-Initiated Cancellations (Controllable Reasons)",
+      "page": null,
+      "chunk_id": "chunk_28",
+      "chunk_index": 27,
+      "doc_hash": "c311aa1b86c454debda2d7a9024bada3e3295d7ba22c5491982effdd9622263f"
+    }
+  },
+  {
+    "chunk_id": "chunk_29",
+    "content": "[8.1. Carrier-Initiated Cancellations (Controllable Reasons)]\n- Hotel accommodation and airport transfers are provided for overnight delays when the passenger is away from their primary residence.",
+    "metadata": {
+      "source": "airline_policy.md",
+      "section": "8.1. Carrier-Initiated Cancellations (Controllable Reasons)",
+      "page": null,
+      "chunk_id": "chunk_29",
+      "chunk_index": 28,
+      "doc_hash": "c311aa1b86c454debda2d7a9024bada3e3295d7ba22c5491982effdd9622263f"
+    }
+  },
+  {
+    "chunk_id": "chunk_30",
+    "content": "For delays or cancellations caused by severe weather, air traffic control ground stops, natural disasters, or government orders:\n- AeroVista Airlines will rebook passengers on the next available flight with open inventory at no additional airline fee.\n- Refunds for cancelled flights are issued exclusively as an AeroVista Future Flight Credit voucher valid for 18 months; cash refunds are not provided for uncontrollable force majeure disruptions unless mandated by local statutory law.\n- Hotel and ground transportation accommodations are the responsibility of the passenger.\n\n---",
+    "metadata": {
+      "source": "airline_policy.md",
+      "section": "8.2. Cancellations Due to Force Majeure (Uncontrollable Reasons)",
+      "page": null,
+      "chunk_id": "chunk_30",
+      "chunk_index": 29,
+      "doc_hash": "c311aa1b86c454debda2d7a9024bada3e3295d7ba22c5491982effdd9622263f"
+    }
+  },
+  {
+    "chunk_id": "chunk_31",
+    "content": "[9. Passenger Name Corrections & Transferability]\n9.1. **Non-Transferability:** All AeroVista Airlines tickets are non-transferable. A ticket issued in the name of one individual cannot be resold, gifted, or reassigned to another person under any circumstances.\n9.2. **Minor Typographical Corrections:** Minor spelling corrections of up to three (3) characters (e.g., correcting \"Jonh\" to \"John\") are processed free of charge upon presentation of government-issued photo ID matching the passenger.",
+    "metadata": {
+      "source": "airline_policy.md",
+      "section": "9. Passenger Name Corrections & Transferability",
+      "page": null,
+      "chunk_id": "chunk_31",
+      "chunk_index": 30,
+      "doc_hash": "c311aa1b86c454debda2d7a9024bada3e3295d7ba22c5491982effdd9622263f"
+    }
+  },
+  {
+    "chunk_id": "chunk_32",
+    "content": "[9. Passenger Name Corrections & Transferability]\n9.3. **Legal Name Changes:** Name changes resulting from marriage, divorce, or court decree require submission of legal documentation (marriage certificate, divorce decree, court order) and are processed for an administrative fee of $30 USD.",
+    "metadata": {
+      "source": "airline_policy.md",
+      "section": "9. Passenger Name Corrections & Transferability",
+      "page": null,
+      "chunk_id": "chunk_32",
+      "chunk_index": 31,
+      "doc_hash": "c311aa1b86c454debda2d7a9024bada3e3295d7ba22c5491982effdd9622263f"
+    }
+  },
+  {
+    "chunk_id": "chunk_33",
+    "content": "[9. Passenger Name Corrections & Transferability]\n---",
+    "metadata": {
+      "source": "airline_policy.md",
+      "section": "9. Passenger Name Corrections & Transferability",
+      "page": null,
+      "chunk_id": "chunk_33",
+      "chunk_index": 32,
+      "doc_hash": "c311aa1b86c454debda2d7a9024bada3e3295d7ba22c5491982effdd9622263f"
+    }
+  },
+  {
+    "chunk_id": "chunk_34",
+    "content": "[10. Check-in Deadlines & Boarding Gate Closures]\n10.1. **Online & Mobile App Check-In:** Opens 24 hours prior to scheduled flight departure and closes 60 minutes prior to departure.\n10.2. **Airport Counter & Baggage Drop Deadlines:**\n- Domestic flights: Closes strictly forty-five (45) minutes prior to scheduled departure.\n- International flights: Closes strictly sixty (60) minutes prior to scheduled departure.\n10.3. **Boarding Gate Arrival:**\n- Boarding begins 40 minutes before departure for domestic flights and 50 minutes for international flights.",
+    "metadata": {
+      "source": "airline_policy.md",
+      "section": "10. Check-in Deadlines & Boarding Gate Closures",
+      "page": null,
+      "chunk_id": "chunk_34",
+      "chunk_index": 33,
+      "doc_hash": "c311aa1b86c454debda2d7a9024bada3e3295d7ba22c5491982effdd9622263f"
+    }
+  },
+  {
+    "chunk_id": "chunk_35",
+    "content": "[10. Check-in Deadlines & Boarding Gate Closures]\n- Boarding gates close firmly fifteen (15) minutes prior to scheduled departure. Passengers arriving after gate closure will be denied boarding and handled under Section 6 (No-Show Policy).",
+    "metadata": {
+      "source": "airline_policy.md",
+      "section": "10. Check-in Deadlines & Boarding Gate Closures",
+      "page": null,
+      "chunk_id": "chunk_35",
+      "chunk_index": 34,
+      "doc_hash": "c311aa1b86c454debda2d7a9024bada3e3295d7ba22c5491982effdd9622263f"
+    }
+  },
+  {
+    "chunk_id": "chunk_36",
+    "content": "[10. Check-in Deadlines & Boarding Gate Closures]\n---",
+    "metadata": {
+      "source": "airline_policy.md",
+      "section": "10. Check-in Deadlines & Boarding Gate Closures",
+      "page": null,
+      "chunk_id": "chunk_36",
+      "chunk_index": 35,
+      "doc_hash": "c311aa1b86c454debda2d7a9024bada3e3295d7ba22c5491982effdd9622263f"
+    }
+  },
+  {
+    "chunk_id": "chunk_37",
+    "content": "[11. Special Assistance, Medical Equipment & Service Animals]\n11.1. **Wheelchair & Mobility Assistance:** Provided free of charge across all flight itineraries. Wheelchair requests must be submitted at least 48 hours prior to departure via the AeroVista Special Assistance portal or reservations hotline.\n11.2. **Personal Mobility Devices:** Manual wheelchairs and electric wheelchairs (with dry-cell or spillable lithium-ion batteries compliant with IATA dangerous goods regulations) are stowed free of charge in the cargo hold and do not count against baggage allowances.",
+    "metadata": {
+      "source": "airline_policy.md",
+      "section": "11. Special Assistance, Medical Equipment & Service Animals",
+      "page": null,
+      "chunk_id": "chunk_37",
+      "chunk_index": 36,
+      "doc_hash": "c311aa1b86c454debda2d7a9024bada3e3295d7ba22c5491982effdd9622263f"
+    }
+  },
+  {
+    "chunk_id": "chunk_38",
+    "content": "[11. Special Assistance, Medical Equipment & Service Animals]\n11.3. **Trained Service Animals:** Recognized service dogs accompanying passengers with physical, sensory, psychiatric, or intellectual disabilities are permitted in the passenger cabin at $0 fee. Emotional support animals (ESAs) are not recognized as service animals and must travel under pet-in-cabin rules.  \n11.4. **Portable Oxygen Concentrators (POCs):** Only FAA/EASA-approved POC models are permitted onboard. Passengers must inform reservations at least 48 hours before departure.",
+    "metadata": {
+      "source": "airline_policy.md",
+      "section": "11. Special Assistance, Medical Equipment & Service Animals",
+      "page": null,
+      "chunk_id": "chunk_38",
+      "chunk_index": 37,
+      "doc_hash": "c311aa1b86c454debda2d7a9024bada3e3295d7ba22c5491982effdd9622263f"
+    }
+  },
+  {
+    "chunk_id": "chunk_39",
+    "content": "[11. Special Assistance, Medical Equipment & Service Animals]\n---",
+    "metadata": {
+      "source": "airline_policy.md",
+      "section": "11. Special Assistance, Medical Equipment & Service Animals",
+      "page": null,
+      "chunk_id": "chunk_39",
+      "chunk_index": 38,
+      "doc_hash": "c311aa1b86c454debda2d7a9024bada3e3295d7ba22c5491982effdd9622263f"
+    }
+  },
+  {
+    "chunk_id": "chunk_40",
+    "content": "[12. Unaccompanied Minors, Infants and Child Travel]\n12.1. **Infants (Under 2 Years Old):**\n- Lap Infants: An infant traveling on the lap of an adult passenger flies for 10% of the adult fare on international routes and $0 on domestic routes.\n- Ticketed Seat Infants: An infant occupying an approved child restraint safety seat must hold a regular ticket (discounted by 15% on standard fares).\n12.2. **Unaccompanied Minors (UMNR):**\n- Children aged 5 to 11 traveling without an adult aged 18 or older must utilize the mandatory AeroVista UMNR Service.\n- UMNR service fee: $125 USD each way for nonstop flights; connecting itineraries are not permitted for minors under 12.",
+    "metadata": {
+      "source": "airline_policy.md",
+      "section": "12. Unaccompanied Minors, Infants and Child Travel",
+      "page": null,
+      "chunk_id": "chunk_40",
+      "chunk_index": 39,
+      "doc_hash": "c311aa1b86c454debda2d7a9024bada3e3295d7ba22c5491982effdd9622263f"
+    }
+  },
+  {
+    "chunk_id": "chunk_41",
+    "content": "[12. Unaccompanied Minors, Infants and Child Travel]\n- Minors aged 12 to 17 may travel independently or opt into the UMNR service upon parental request.",
+    "metadata": {
+      "source": "airline_policy.md",
+      "section": "12. Unaccompanied Minors, Infants and Child Travel",
+      "page": null,
+      "chunk_id": "chunk_41",
+      "chunk_index": 40,
+      "doc_hash": "c311aa1b86c454debda2d7a9024bada3e3295d7ba22c5491982effdd9622263f"
+    }
+  },
+  {
+    "chunk_id": "chunk_42",
+    "content": "[12. Unaccompanied Minors, Infants and Child Travel]\n---",
+    "metadata": {
+      "source": "airline_policy.md",
+      "section": "12. Unaccompanied Minors, Infants and Child Travel",
+      "page": null,
+      "chunk_id": "chunk_42",
+      "chunk_index": 41,
+      "doc_hash": "c311aa1b86c454debda2d7a9024bada3e3295d7ba22c5491982effdd9622263f"
+    }
+  },
+  {
+    "chunk_id": "chunk_43",
+    "content": "13.1. **Processing Schedule:**  \n- Credit and Debit Card Purchases: Processed within seven to ten (7\u201310) business days following administrative approval. The posting date on cardholder statements depends on the issuing financial institution.  \n- Cash or Direct Wire Purchases: Processed via electronic bank transfer or paper check within twenty (20) business days.  \n13.2. **Service Fees Non-Refundability:** Ancillary service fees (including seat selection, priority boarding, and pre-purchased in-flight Wi-Fi) are non-refundable unless AeroVista cancelled the flight or was unable to provide the purchased service.\n\n---",
+    "metadata": {
+      "source": "airline_policy.md",
+      "section": "13. Refund Processing Timelines & Payment Method Rules",
+      "page": null,
+      "chunk_id": "chunk_43",
+      "chunk_index": 42,
+      "doc_hash": "c311aa1b86c454debda2d7a9024bada3e3295d7ba22c5491982effdd9622263f"
+    }
+  },
+  {
+    "chunk_id": "chunk_44",
+    "content": "[14. Exceptions, Escalation & Customer Relations Procedures]\n14.1. **Discretionary Review:** Frontline airport staff and automated digital assistants do not possess authority to grant policy exceptions, waive non-refundable clauses, or authorize discretionary cash settlements.\n14.2. **Formal Escalation Procedure:** Passengers seeking review under extenuating medical emergencies, severe humanitarian hardship, or contested claims must submit a formal written dossier to:\n- **Office:** AeroVista Customer Relations Appeals Board\n- **Postal:** PO Box 8840, AeroVista Aviation Center, Dallas, TX 75261\n- **Digital Portal:** `https://www.aerovista.example.com/appeals`",
+    "metadata": {
+      "source": "airline_policy.md",
+      "section": "14. Exceptions, Escalation & Customer Relations Procedures",
+      "page": null,
+      "chunk_id": "chunk_44",
+      "chunk_index": 43,
+      "doc_hash": "c311aa1b86c454debda2d7a9024bada3e3295d7ba22c5491982effdd9622263f"
+    }
+  },
+  {
+    "chunk_id": "chunk_45",
+    "content": "[14. Exceptions, Escalation & Customer Relations Procedures]\n- **Required Inclusions:** Booking reference (PNR), passenger ticket number, detailed narrative, and certified independent corroborating documentation.  \n14.3. Review dossiers are evaluated within thirty (30) business days. Decisions rendered by the Appeals Board are definitive and final under carrier regulations.",
+    "metadata": {
+      "source": "airline_policy.md",
+      "section": "14. Exceptions, Escalation & Customer Relations Procedures",
+      "page": null,
+      "chunk_id": "chunk_45",
+      "chunk_index": 44,
+      "doc_hash": "c311aa1b86c454debda2d7a9024bada3e3295d7ba22c5491982effdd9622263f"
+    }
+  },
+  {
+    "chunk_id": "chunk_46",
+    "content": "[14. Exceptions, Escalation & Customer Relations Procedures]\n---",
+    "metadata": {
+      "source": "airline_policy.md",
+      "section": "14. Exceptions, Escalation & Customer Relations Procedures",
+      "page": null,
+      "chunk_id": "chunk_46",
+      "chunk_index": 45,
+      "doc_hash": "c311aa1b86c454debda2d7a9024bada3e3295d7ba22c5491982effdd9622263f"
+    }
+  },
+  {
+    "chunk_id": "chunk_47",
+    "content": "- **Document Identifier:** `AV-POL-2026-REV4`  \n- **Effective Release Date:** 2026-01-15T00:00:00Z  \n- **Approved by:** AeroVista Airlines Executive Board of Passenger Operations  \n- **Revision Interval:** Annual, or upon major statutory regulatory enactments  \n- **Document Hash Verification:** Calculated via SHA-256 for automated RAG ingestion integrity. Any alteration to the text of this document alters the hash and mandates vector store re-indexing.",
+    "metadata": {
+      "source": "airline_policy.md",
+      "section": "15. Policy Governance, Document Hash & Effective Date",
+      "page": null,
+      "chunk_id": "chunk_47",
+      "chunk_index": 46,
+      "doc_hash": "c311aa1b86c454debda2d7a9024bada3e3295d7ba22c5491982effdd9622263f"
+    }
+  }
+]
