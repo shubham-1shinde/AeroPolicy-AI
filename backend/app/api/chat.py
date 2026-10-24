@@ -1,4 +1,5 @@
 
+import asyncio
 import logging
 import time
 import uuid
@@ -52,11 +53,11 @@ async def chat_endpoint(request: ChatRequest):
                 detail="The policy knowledge base is initializing or unavailable.",
             )
 
-        # Stage 1: Retrieval and embeddings
+        # Stage 1: Retrieval and embeddings (run in threadpool to prevent blocking event loop)
         stage = time.perf_counter()
         logger.info("CHAT[%s]: RETRIEVAL_BEGIN", request_id)
 
-        retrieved_chunks = rag_engine.retrieve(user_query)
+        retrieved_chunks = await asyncio.to_thread(rag_engine.retrieve, user_query)
 
         logger.info(
             "CHAT[%s]: RETRIEVAL_SUCCESS chunks=%d elapsed=%.2fs",
@@ -65,7 +66,7 @@ async def chat_endpoint(request: ChatRequest):
             time.perf_counter() - stage,
         )
 
-        # Stage 2: Gemini generation and verification
+        # Stage 2: Gemini generation and verification (run in threadpool)
         stage = time.perf_counter()
         logger.info(
             "CHAT[%s]: GENERATION_BEGIN model=%s",
@@ -73,7 +74,8 @@ async def chat_endpoint(request: ChatRequest):
             gemini_service.model_name,
         )
 
-        response = gemini_service.generate_grounded_response(
+        response = await asyncio.to_thread(
+            gemini_service.generate_grounded_response,
             query=user_query,
             retrieved_chunks=retrieved_chunks,
             context=request.context,

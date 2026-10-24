@@ -6,6 +6,16 @@ import time
 from pathlib import Path
 from typing import List
 
+# Restrict multi-threading BEFORE torch/sentence_transformers is loaded.
+# This prevents cloud containers (like Render 512MB RAM) from spawning
+# thread pools for all 32/64 host cores and triggering immediate OOM (SIGKILL 137).
+os.environ.setdefault("OMP_NUM_THREADS", "1")
+os.environ.setdefault("MKL_NUM_THREADS", "1")
+os.environ.setdefault("OPENBLAS_NUM_THREADS", "1")
+os.environ.setdefault("VECLIB_MAXIMUM_THREADS", "1")
+os.environ.setdefault("NUMEXPR_NUM_THREADS", "1")
+os.environ.setdefault("TOKENIZERS_PARALLELISM", "false")
+
 import numpy as np
 
 logger = logging.getLogger(__name__)
@@ -84,6 +94,12 @@ class LocalEmbeddingService:
 
             try:
                 logger.info("EMBED_LOAD: Importing SentenceTransformer.")
+                try:
+                    import torch
+                    torch.set_num_threads(1)
+                    torch.set_num_interop_threads(1)
+                except Exception:
+                    pass
                 from sentence_transformers import SentenceTransformer
 
                 logger.info(

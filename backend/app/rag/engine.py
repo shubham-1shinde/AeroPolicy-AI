@@ -107,6 +107,8 @@ class RAGEngine:
                     logger.info(
                         "RAG_INIT: Persistent index loaded successfully."
                     )
+                    logger.info("RAG_INIT: Pre-warming embedding model on startup...")
+                    self.embedding_service._ensure_loaded()
                     self.is_ready = True
                     return True
 
