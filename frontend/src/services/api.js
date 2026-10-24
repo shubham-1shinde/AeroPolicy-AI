@@ -1,4 +1,4 @@
-const BASE_URL = `${import.meta.env.BACKEND_URL}/api`;
+const BASE_URL = `${import.meta.env.VITE_BACKEND_URL}/api`;
 
 export async function sendChatMessage(message, conversationId = null, context = {}) {
   const response = await fetch(`${BASE_URL}/chat`, {
