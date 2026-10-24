@@ -1,4 +1,4 @@
-
+import time
 import logging
 import threading
 from typing import List, Dict, Any, Optional, Tuple
@@ -259,7 +259,14 @@ class RAGEngine:
                     "The policy vector store could not be loaded."
                 )
 
+        logger.info("RAG_DEBUG: Starting query embedding.")
+
         query_embedding = self.embedding_service.embed_query(query)
+
+        logger.info(
+            "RAG_DEBUG: Query embedding ready. Shape=%s",
+            query_embedding.shape,
+        )
 
         return self.vectorstore.search(
             query_embedding,

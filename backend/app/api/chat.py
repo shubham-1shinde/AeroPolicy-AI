@@ -1,6 +1,7 @@
 
 import logging
 import time
+import uuid
 
 from fastapi import APIRouter, HTTPException, status
 
@@ -11,7 +12,6 @@ from app.services.gemini_service import GeminiChatService
 logger = logging.getLogger(__name__)
 
 router = APIRouter()
-
 rag_engine = RAGEngine()
 gemini_service = GeminiChatService()
 
@@ -22,46 +22,56 @@ gemini_service = GeminiChatService()
     summary="Answer customer airline policy question",
 )
 async def chat_endpoint(request: ChatRequest):
-    request_start = time.perf_counter()
+    request_id = uuid.uuid4().hex[:10]
+    started = time.perf_counter()
 
-    user_query = request.message.strip()
-
-    if not user_query:
-        raise HTTPException(
-            status_code=status.HTTP_400_BAD_REQUEST,
-            detail="Message cannot be blank.",
-        )
-
-    # Do not process a chat until background initialization finishes.
-    if not rag_engine.is_ready:
-        logger.warning(
-            "CHAT_DEBUG: Request received while policy index is not ready."
-        )
-
-        raise HTTPException(
-            status_code=status.HTTP_503_SERVICE_UNAVAILABLE,
-            detail=(
-                "The policy knowledge base is initializing or unavailable. "
-                "Please try again shortly."
-            ),
-        )
+    logger.info(
+        "CHAT[%s]: REQUEST_RECEIVED query_length=%d ready=%s",
+        request_id,
+        len(request.message or ""),
+        rag_engine.is_ready,
+    )
 
     try:
-        # Step 1: Retrieve policy evidence.
-        logger.info("CHAT_DEBUG: Starting policy retrieval.")
-        stage_start = time.perf_counter()
+        user_query = (request.message or "").strip()
+
+        if not user_query:
+            logger.warning("CHAT[%s]: Rejected blank message.", request_id)
+            raise HTTPException(
+                status_code=status.HTTP_400_BAD_REQUEST,
+                detail="Message cannot be blank.",
+            )
+
+        if not rag_engine.is_ready:
+            logger.warning(
+                "CHAT[%s]: Policy index is not ready.",
+                request_id,
+            )
+            raise HTTPException(
+                status_code=status.HTTP_503_SERVICE_UNAVAILABLE,
+                detail="The policy knowledge base is initializing or unavailable.",
+            )
+
+        # Stage 1: Retrieval and embeddings
+        stage = time.perf_counter()
+        logger.info("CHAT[%s]: RETRIEVAL_BEGIN", request_id)
 
         retrieved_chunks = rag_engine.retrieve(user_query)
 
         logger.info(
-            "CHAT_DEBUG: Retrieval finished in %.2fs; chunks=%d.",
-            time.perf_counter() - stage_start,
+            "CHAT[%s]: RETRIEVAL_SUCCESS chunks=%d elapsed=%.2fs",
+            request_id,
             len(retrieved_chunks),
+            time.perf_counter() - stage,
         )
 
-        # Step 2: Generate a grounded response.
-        logger.info("CHAT_DEBUG: Starting response generation.")
-        stage_start = time.perf_counter()
+        # Stage 2: Gemini generation and verification
+        stage = time.perf_counter()
+        logger.info(
+            "CHAT[%s]: GENERATION_BEGIN model=%s",
+            request_id,
+            gemini_service.model_name,
+        )
 
         response = gemini_service.generate_grounded_response(
             query=user_query,
@@ -70,26 +80,34 @@ async def chat_endpoint(request: ChatRequest):
         )
 
         logger.info(
-            "CHAT_DEBUG: Response generation finished in %.2fs.",
-            time.perf_counter() - stage_start,
+            "CHAT[%s]: GENERATION_SUCCESS elapsed=%.2fs",
+            request_id,
+            time.perf_counter() - stage,
         )
 
         response.conversation_id = request.conversation_id
 
         logger.info(
-            "CHAT_DEBUG: Request completed in %.2fs.",
-            time.perf_counter() - request_start,
+            "CHAT[%s]: REQUEST_SUCCESS total=%.2fs",
+            request_id,
+            time.perf_counter() - started,
         )
-
         return response
 
-    except HTTPException:
+    except HTTPException as exc:
+        logger.warning(
+            "CHAT[%s]: HTTP_ERROR status=%s elapsed=%.2fs",
+            request_id,
+            exc.status_code,
+            time.perf_counter() - started,
+        )
         raise
 
     except Exception:
         logger.exception(
-            "CHAT_DEBUG: Request failed after %.2fs.",
-            time.perf_counter() - request_start,
+            "CHAT[%s]: REQUEST_FAILED elapsed=%.2fs",
+            request_id,
+            time.perf_counter() - started,
         )
 
         raise HTTPException(

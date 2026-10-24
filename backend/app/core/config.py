@@ -15,7 +15,7 @@ class Settings(BaseSettings):
     VECTORSTORE_PATH: str = "data/vectorstore"
     METADATA_PATH: str = "data/metadata"
 
-    EMBEDDING_MODEL_NAME: str = "sentence-transformers/all-MiniLM-L6-v2"
+    EMBEDDING_MODEL_NAME: str = ""
     CHUNK_SIZE: int = 650
     CHUNK_OVERLAP: int = 100
     SIMILARITY_THRESHOLD: float = 0.35
