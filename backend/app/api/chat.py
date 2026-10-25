@@ -44,14 +44,29 @@ async def chat_endpoint(request: ChatRequest):
             )
 
         if not rag_engine.is_ready:
-            logger.warning(
-                "CHAT[%s]: Policy index is not ready.",
+            logger.info(
+                "CHAT[%s]: Policy index is still warming up. Waiting up to 35s...",
                 request_id,
             )
-            raise HTTPException(
-                status_code=status.HTTP_503_SERVICE_UNAVAILABLE,
-                detail="The policy knowledge base is initializing or unavailable.",
-            )
+            wait_start = time.perf_counter()
+            while not rag_engine.is_ready and (time.perf_counter() - wait_start) < 35.0:
+                await asyncio.sleep(0.5)
+
+            if not rag_engine.is_ready:
+                logger.warning(
+                    "CHAT[%s]: Policy index initialization timed out after 35s.",
+                    request_id,
+                )
+                raise HTTPException(
+                    status_code=status.HTTP_503_SERVICE_UNAVAILABLE,
+                    detail="The policy knowledge base is still initializing. Please wait a moment and try again.",
+                )
+            else:
+                logger.info(
+                    "CHAT[%s]: Policy index became ready after %.2fs wait.",
+                    request_id,
+                    time.perf_counter() - wait_start,
+                )
 
         # Stage 1: Retrieval and embeddings (run in threadpool to prevent blocking event loop)
         stage = time.perf_counter()

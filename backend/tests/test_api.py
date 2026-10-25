@@ -6,6 +6,7 @@ from app.core.config import settings
 client = TestClient(app)
 
 def test_health_endpoint():
+    # Test GET /api/health
     response = client.get("/api/health")
     assert response.status_code == 200
     data = response.json()
@@ -13,6 +14,16 @@ def test_health_endpoint():
     assert data["policy_status"] == "READY"
     assert data["indexed_chunks"] > 0
     assert data["model"] == settings.GEMINI_MODEL
+
+    # Test HEAD / and HEAD /health for Render health checks
+    head_root = client.head("/")
+    assert head_root.status_code == 200
+
+    head_health = client.head("/health")
+    assert head_health.status_code == 200
+
+    head_api_health = client.head("/api/health")
+    assert head_api_health.status_code == 200
 
 def test_policy_status_endpoint():
     response = client.get("/api/policy/status")

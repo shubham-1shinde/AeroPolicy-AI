@@ -183,7 +183,7 @@ async def generic_exception_handler(
 app.include_router(api_router)
 
 
-@app.get("/")
+@app.api_route("/", methods=["GET", "HEAD"])
 async def root():
     return {
         "service": "AeroPolicy AI Backend",
@@ -191,6 +191,12 @@ async def root():
         "docs": "/docs",
         "health": "/api/health",
     }
+
+
+@app.api_route("/health", methods=["GET", "HEAD"])
+async def root_health():
+    """Direct root health check responding to both GET and HEAD for Render probes."""
+    return {"status": "healthy"}
 
 
 @app.get("/api/diagnostics/initialization")

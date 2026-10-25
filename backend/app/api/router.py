@@ -9,7 +9,7 @@ api_router = APIRouter(prefix="/api")
 
 rag_engine = RAGEngine()
 
-@api_router.get("/health", response_model=HealthResponse, summary="Service health check")
+@api_router.api_route("/health", methods=["GET", "HEAD"], response_model=HealthResponse, summary="Service health check")
 async def health_check():
     status_info = rag_engine.get_status()
     return HealthResponse(
